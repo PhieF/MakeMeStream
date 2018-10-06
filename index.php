@@ -91,7 +91,7 @@ var post = function () {
         url: "sendlink.php",
         data: {
             uid:$("#uid").val(),
-            url:$("#url").val().replace("/videos/watch/","/videos/embed/"),
+            url:$("#url").val().replace("/videos/watch/","/videos/embed/")+"?autoplay=1",
         },
         type: "POST",
         success: function (data) {
