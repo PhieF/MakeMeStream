@@ -87,11 +87,12 @@ var get = function () {
 }
 
 var post = function () {
+    var url = $("#url").val().replace("/videos/watch/","/videos/embed/");
     $.ajax({
         url: "sendlink.php",
         data: {
             uid:$("#uid").val(),
-            url:$("#url").val().replace("/videos/watch/","/videos/embed/")+"?autoplay=1",
+            url:url+(url.indexOf("?")>=0?"&":"?")+"autoplay=1",
         },
         type: "POST",
         success: function (data) {
